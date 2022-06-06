@@ -1,0 +1,19 @@
+# External libraries:
+import os
+
+
+# General app information:
+APP_NAME = 'Arcade Checkers'
+APP_VERSION = '0.1a'
+APP_VERSION_NAME = 'COREDEV1'
+APP_CREATED = '2022.06.06'
+APP_UPDATED = '2022.06.06'
+
+# Application's directories:
+APP_DIR = os.path.dirname(__file__)
+APP_TEXTURES_DIR_NAME = 'textures'
+APP_TEXTURES_DIR = os.path.join(APP_DIR, APP_TEXTURES_DIR_NAME)
+APP_TEXTURES_GAME_DIR_NAME = 'game'
+APP_TEXTURES_GAME_DIR = os.path.join(APP_TEXTURES_DIR, APP_TEXTURES_GAME_DIR_NAME)
+APP_TEXTURES_UI_ELEMENTS_DIR_NAME = 'ui_elements'
+APP_TEXTURES_UI_ELEMENTS_DIR = os.path.join(APP_TEXTURES_DIR, APP_TEXTURES_UI_ELEMENTS_DIR_NAME)
