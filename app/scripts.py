@@ -1,6 +1,6 @@
 # Internal scripts and modules:
 from app.settings import (GRID_NUMERIC_INDEX_STRING, GRID_ALPHABETIC_INDEX_STRING,
-                          BOARD_LINE_TOTAL_WIDTH, BOARD_TILE_SIZE_PX, BOARD_PLAY_SURFACE_MIN, BOARD_PLAY_SURFACE_MAX)
+                          BOARD_MARGIN_TOTAL_WIDTH, BOARD_TILE_SIZE_PX, BOARD_PLAY_SURFACE_MIN, BOARD_PLAY_SURFACE_MAX)
 
 
 def convert_grid_position_to_alphanumeric_position(conv_grid_position: list):
@@ -23,14 +23,14 @@ def convert_coordinates_to_grid_position(conv_coordinates: list):
     coordinate_x, coordinate_y = conv_coordinates
     if bool(BOARD_PLAY_SURFACE_MAX > coordinate_x > BOARD_PLAY_SURFACE_MIN and
             BOARD_PLAY_SURFACE_MAX > coordinate_y > BOARD_PLAY_SURFACE_MIN):
-        row = int((coordinate_x - BOARD_LINE_TOTAL_WIDTH) // BOARD_TILE_SIZE_PX)
-        column = int((coordinate_y - BOARD_LINE_TOTAL_WIDTH) // BOARD_TILE_SIZE_PX)
+        row = int((coordinate_x - BOARD_MARGIN_TOTAL_WIDTH) // BOARD_TILE_SIZE_PX)
+        column = int((coordinate_y - BOARD_MARGIN_TOTAL_WIDTH) // BOARD_TILE_SIZE_PX)
         grid_position = [row, column]
     return grid_position
 
 def convert_grid_position_to_coordinates(conv_grid_position: list):
     row, column = conv_grid_position
-    coordinate_x = int(BOARD_LINE_TOTAL_WIDTH + BOARD_TILE_SIZE_PX / 2 + BOARD_TILE_SIZE_PX * (column))
-    coordinate_y = int(BOARD_LINE_TOTAL_WIDTH + BOARD_TILE_SIZE_PX / 2 + BOARD_TILE_SIZE_PX * (row))
+    coordinate_x = int(BOARD_MARGIN_TOTAL_WIDTH + BOARD_TILE_SIZE_PX / 2 + BOARD_TILE_SIZE_PX * (column))
+    coordinate_y = int(BOARD_MARGIN_TOTAL_WIDTH + BOARD_TILE_SIZE_PX / 2 + BOARD_TILE_SIZE_PX * (row))
     coordinates = [coordinate_x, coordinate_y]
     return coordinates
