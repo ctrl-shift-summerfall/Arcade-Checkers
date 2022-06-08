@@ -1,8 +1,16 @@
-# Internal scripts and modules:
+# Internal settings and variables:
 from app.settings import (GAME_SCREEN_WIDTH, GAME_SCREEN_HEIGHT, GAME_SCREEN_TITLE,
                           GAME_SCREEN_FULLSCREEN, GAME_SCREEN_RESIZABLE, GAME_SCREEN_UPDATE_RATE, GAME_SCREEN_ANTIALIASING)
 
-from app.board import Board
+# Internal scripts:
+from app.scripts import (convert_coordinates_to_grid_position,              # [coord_x, coord_y] --> [row, column]
+                         convert_grid_position_to_coordinates,              # [row, column] --> [coord_x, coord_y]
+                         convert_grid_position_to_alphanumeric_position,    # [row, column] --> "A1"
+                         convert_alphanumeric_position_to_grid_position)    # "A1" --> [row, column]
+
+# Controllers:
+from app.board import Board         # Board controller
+from app.checker import Checker     # Checker class object
 
 # External libraries:
 import arcade

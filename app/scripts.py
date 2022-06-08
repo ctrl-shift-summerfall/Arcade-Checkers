@@ -1,4 +1,4 @@
-# Internal scripts and modules:
+# Internal settings and variables:
 from app.settings import (GRID_NUMERIC_INDEX_STRING, GRID_ALPHABETIC_INDEX_STRING,
                           BOARD_MARGIN_TOTAL_WIDTH, BOARD_TILE_SIZE_PX, BOARD_PLAY_SURFACE_MIN, BOARD_PLAY_SURFACE_MAX)
 

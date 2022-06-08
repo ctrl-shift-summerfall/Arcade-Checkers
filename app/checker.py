@@ -1,16 +1,16 @@
-# Internal scripts and modules:
-from curses import COLOR_BLACK, COLOR_WHITE
-from tracemalloc import start
+# Internal settings and variables:
 from app.variables import (VAR_CHECKER_COLOR_NOT_SET, VAR_CHECKER_COLOR_BLACK, VAR_CHECKER_COLOR_WHITE,
                            VAR_CHECKER_TYPE_NOT_SET, VAR_CHECKER_TYPE_ORDINARY, VAR_CHECKER_TYPE_QUEEN,
                            VAR_SESSION_RENDER_MODE_OPENGL, VAR_SESSION_RENDER_MODE_TEXTURE)
-
-from app.scripts import (convert_grid_position_to_alphanumeric_position, convert_grid_position_to_coordinates)
 
 from app.settings import (CHECKER_COLOR_WHITE, CHECKER_COLOR_WHITE_ALTERNATIVE,
                           CHECKER_COLOR_BLACK, CHECKER_COLOR_BLACK_ALTERNATIVE,
                           CHECKER_SIZE_RADIUS_PX, CHECKER_INNER_RADIUS_PX, CHECKER_ADJUST_POSITION_PX,
                           CHECKER_TILT_ANGLE_MIN, CHECKER_TILT_ANGLE_MAX)
+
+# Internal scripts:
+from app.scripts import (convert_grid_position_to_alphanumeric_position,    # [row, column] --> "A1"
+                         convert_grid_position_to_coordinates)              # [row, column] --> [coord_x, coord_y]
 
 # External libraries:
 import arcade
@@ -23,10 +23,10 @@ class Checker:
         # Core attributes:
         self.color: str = VAR_CHECKER_COLOR_NOT_SET
         self.type: str = VAR_CHECKER_TYPE_NOT_SET
-        self.position_grid: list = None
-        self.position_coordinates: list = None
-        self.position_alphanumeric: str = None
-        self.waypoints: list = []
+        self.position_grid: list = None                     # [row, column]
+        self.position_coordinates: list = None              # [coord_x, coord_y]
+        self.position_alphanumeric: str = None              # "A1"
+        self.waypoints: list = []                           # [["A1", @CheckerObject], ...]
 
     @property
     def can_move(self):

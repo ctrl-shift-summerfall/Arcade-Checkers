@@ -1,14 +1,14 @@
-# Internal libraries and modules:
-from app.settings import (BOARD_TILE_SIZE_PX, BOARD_MARGIN_TOTAL_WIDTH, BOARD_HEIGHT, BOARD_WIDTH,
+# Internal settings and variables:
+from app.settings import (BOARD_TILE_SIZE_PX, BOARD_HEIGHT, BOARD_WIDTH,
                           BOARD_CENTER_POSITION_X, BOARD_CENTER_POSITION_Y,
                           BOARD_MARGIN_INNER_WIDTH, BOARD_MARGIN_INNER_COLOR,
                           BOARD_MARGIN_OUTER_WIDTH, BOARD_MARGIN_OUTER_COLOR,
-                          BOARD_TILE_COLOR_BLACK, BOARD_TILE_COLOR_BLACK_ALTERNATIVE,
-                          BOARD_TILE_COLOR_WHITE, BOARD_TILE_COLOR_WHITE_ALTERNATIVE,
+                          BOARD_TILE_COLOR_BLACK, BOARD_TILE_COLOR_WHITE,
                           GRID_ALPHABETIC_INDEX_STRING, GRID_NUMERIC_INDEX_STRING,
                           GRID_ROW_COUNT, GRID_COLUMN_COUNT)
-
-from app.variables import (VAR_BOARD_TILE_COLOR_BLACK, VAR_BOARD_TILE_COLOR_WHITE, VAR_SESSION_RENDER_MODE_OPENGL, VAR_SESSION_RENDER_MODE_TEXTURE)
+                          
+from app.variables import (VAR_BOARD_TILE_COLOR_BLACK, VAR_BOARD_TILE_COLOR_WHITE, 
+                           VAR_SESSION_RENDER_MODE_OPENGL, VAR_SESSION_RENDER_MODE_TEXTURE)
 
 # External libraries:
 import arcade
