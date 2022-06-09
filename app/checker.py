@@ -50,7 +50,7 @@ class Checker:
     def can_upgrade(self):
         can_upgrade_status = False
         if self.type == VAR_CHECKER_TYPE_ORDINARY:
-            letter, number = self.update_alphanumeric_position[0], self.update_alphanumeric_position[1]
+            letter, number = self.position_alphanumeric[0], self.position_alphanumeric[1]
             if bool(self.color == VAR_CHECKER_COLOR_WHITE and number == '8' or 
                     self.color == VAR_CHECKER_COLOR_BLACK and number == 1):
                 can_upgrade_status = True
@@ -59,7 +59,7 @@ class Checker:
     def update(self):
         self._update_alphanumeric_position()
         self._update_coordinates_position()
-        if self.can_upgrade():
+        if self.can_upgrade:
             # TODO: Create upgrade script.
             pass
 
@@ -97,27 +97,31 @@ class Checker:
                 center_y=coordinate_y - int(CHECKER_ADJUST_POSITION_PX / 2),
                 radius=CHECKER_SIZE_RADIUS_PX,
                 color=color_alternative,
-                tilt_angle=CHECKER_TILT_ANGLE_MIN * 0)
+                tilt_angle=CHECKER_TILT_ANGLE_MIN * 0,
+                num_segments=64)
             arcade.draw_circle_filled(
                 center_x=coordinate_x + int(CHECKER_ADJUST_POSITION_PX / 2),
                 center_y=coordinate_y + int(CHECKER_ADJUST_POSITION_PX / 2),
                 radius=CHECKER_SIZE_RADIUS_PX,
                 color=color_main,
-                tilt_angle=CHECKER_TILT_ANGLE_MIN * 0)
+                tilt_angle=CHECKER_TILT_ANGLE_MIN * 0,
+                num_segments=64)
 
             # Rendering inner radius:
             arcade.draw_circle_filled(
                 center_x=coordinate_x + int(CHECKER_ADJUST_POSITION_PX / 2),
                 center_y=coordinate_y + int(CHECKER_ADJUST_POSITION_PX / 2),
                 radius=CHECKER_INNER_RADIUS_PX,
-                color=color_main,
-                tilt_angle=CHECKER_TILT_ANGLE_MIN * 0)
+                color=color_alternative,
+                tilt_angle=CHECKER_TILT_ANGLE_MIN * 0,
+                num_segments=64)
             arcade.draw_circle_filled(
                 center_x=coordinate_x - int(CHECKER_ADJUST_POSITION_PX / 2),
                 center_y=coordinate_y - int(CHECKER_ADJUST_POSITION_PX / 2),
                 radius=CHECKER_INNER_RADIUS_PX,
-                color=color_alternative,
-                tilt_angle=CHECKER_TILT_ANGLE_MIN * 0)
+                color=color_main,
+                tilt_angle=CHECKER_TILT_ANGLE_MIN * 0,
+                num_segments=64)
 
             # Rendering "Queen" tag, if checker type is Queen:
             if self.type == VAR_CHECKER_TYPE_QUEEN:

@@ -29,10 +29,24 @@ class Gameshell(arcade.Window):
         
         super().__init__(width, height, title, fullscreen, resizable, update_rate, antialiasing)
         self.board_controller = Board()
+        self.board_controller.grid_create_new()
+        self.board_controller.grid_populate()
         arcade.run()
     
     def on_draw(self):
-        self.board_controller.render()
+
+        def render_board_surface():
+            self.board_controller.render()
+
+        def render_checkers():
+            for row in self.board_controller.grid:
+                for column in self.board_controller.grid[row]:
+                    if self.board_controller.grid[row][column] is not None:
+                        checker_object: Checker = self.board_controller.grid[row][column]
+                        checker_object.render()
+                        
+        render_board_surface()
+        render_checkers()
         return super().on_draw()
     
     def on_update(self, delta_time: float):
