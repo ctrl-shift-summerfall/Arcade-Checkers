@@ -36,7 +36,7 @@ class Gameshell(arcade.Window):
     def on_draw(self):
 
         def render_board_surface():
-            self.board_controller.render()
+            self.board_controller.render_board_surface()
 
         def render_checkers():
             for row in self.board_controller.grid:

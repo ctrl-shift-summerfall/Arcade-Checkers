@@ -34,14 +34,3 @@ def convert_grid_position_to_coordinates(conv_grid_position: list):
     coordinate_y = int(BOARD_MARGIN_TOTAL_WIDTH + BOARD_TILE_SIDE_SIZE_PX / 2 + BOARD_TILE_SIDE_SIZE_PX * (row))
     coordinates = [coordinate_x, coordinate_y]
     return coordinates
-
-def create_new_checker(ch_color: str, ch_type: str, ch_grid_position: list):
-    from app.checker import Checker
-
-    new_checker = Checker()
-    new_checker.color = ch_color
-    new_checker.type = ch_type
-    new_checker.position_grid = ch_grid_position
-    new_checker.update()
-
-    return new_checker

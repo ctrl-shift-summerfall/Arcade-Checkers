@@ -18,15 +18,21 @@ import arcade
 
 class Checker:
 
-    def __init__(self):
+    def __init__(self, 
+                 set_color: str = VAR_CHECKER_COLOR_NOT_SET,
+                 set_type: str = VAR_CHECKER_TYPE_NOT_SET,
+                 set_position: list = [0, 0]):
         
         # Core attributes:
-        self.color: str = VAR_CHECKER_COLOR_NOT_SET
-        self.type: str = VAR_CHECKER_TYPE_NOT_SET
-        self.position_grid: list = None                     # [row, column]
+        self.color: str = set_color
+        self.type: str = set_type
+        self.position_grid: list = set_position             # [row, column]
         self.position_coordinates: list = None              # [coord_x, coord_y]
         self.position_alphanumeric: str = None              # "A1"
         self.waypoints: list = []                           # [["A1", @CheckerObject], ...]
+
+        self.selected: bool = False
+        self.update()
 
     @property
     def can_move(self):
