@@ -39,11 +39,7 @@ class Gameshell(arcade.Window):
             self.board_controller.render_board_surface()
 
         def render_checkers():
-            for row in self.board_controller.grid:
-                for column in self.board_controller.grid[row]:
-                    if self.board_controller.grid[row][column] is not None:
-                        checker_object: Checker = self.board_controller.grid[row][column]
-                        checker_object.render()
+            self.board_controller.render_checkers()
                         
         render_board_surface()
         render_checkers()

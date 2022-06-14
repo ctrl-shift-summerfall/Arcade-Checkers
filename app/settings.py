@@ -4,10 +4,10 @@ import os
 
 # General app information:
 APP_NAME = 'Arcade Checkers'
-APP_VERSION = '0.1c'
+APP_VERSION = '0.1d'
 APP_VERSION_NAME = 'COREDEV1'
 APP_CREATED = '2022.06.06'
-APP_UPDATED = '2022.06.09'
+APP_UPDATED = '2022.06.14'
 
 # Application's directories:
 APP_DIR = os.path.dirname(__file__)
